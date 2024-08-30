@@ -1,0 +1,204 @@
+*{
+    padding: 0;
+    margin: 0;
+    --border-radius: 25px;
+    --header-color: linear-gradient(37deg, rgba(114,62,231,1) 0%, rgba(220,125,255,1) 100%);
+}
+body{
+    background-color: rgb(240, 240, 240);
+}
+.container{
+    width: 100vw;
+}
+header{
+    width: 100%;
+    height: 90vh;
+    background-image: url(icon1.svg), url(bg-accent.svg), var(--header-color);
+    background-position: bottom, top;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    flex-direction: column;
+    mask-image: url(icon1-bg.svg);
+    mask-size: cover;
+    mask-position: bottom;
+}
+/* header::before{
+    content: '';
+    width: 110%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    background: linear-gradient(37deg, rgba(114,62,231,1) 0%, rgba(220,125,255,1) 100%);
+    background-repeat: no-repeat;
+    position: absolute;
+} */
+header #icon1{
+    width: 1300px;
+    position: absolute;
+}
+header h1{
+    color: white;
+    font-family: "DM Serif Text", Serif, 'Times New Roman', Times;
+    font-style: normal;
+    font-weight: 550;
+    font-size: 4.5em;
+
+    margin: 1rem;
+}
+header h2{
+    color: white;
+    font-size: 1em;
+    font-family: "Open Sans", Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 400;
+    text-align: center;
+}
+#contactBtn{
+    width: 12rem;
+    height: 3rem;
+    border-radius: 3rem;
+
+    font-size: 0.8rem;
+    font-family: "Open Sans", Verdana, Geneva, Tahoma, sans-serif;
+    color: rgb(110, 3, 191);
+    letter-spacing: 2px;
+    font-weight: 650;
+
+    box-shadow: 0px;
+    border: 0px;
+
+    background-color: rgb(255, 255, 255);
+    cursor: pointer;
+}
+.content{
+    width: 100vw;
+    
+    justify-content: center;
+    align-items: center;
+
+    display: flex;
+    flex-direction: column;
+}
+.content h1{
+    font-size: 3rem;
+    font-family: "DM Serif Text", Serif, 'Times New Roman', Times;
+    font-style: normal;
+    font-weight: 500;
+    text-align: center;
+    letter-spacing: 0.1rem;
+}
+.content h2{
+    font-size: 1rem;
+    font-family: "Open Sans", Verdana, Geneva, Tahoma, sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    text-align: center;
+    letter-spacing: 0.1rem;
+}
+
+.serviceList{
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+}
+#servicesIcon{
+    width: 5rem;
+    height: 5rem;
+
+    border: 2px, solid;
+}
+.clientList{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.clientList #clientsIcon{
+    width: 10rem;
+    height: 5rem;
+
+    border: 2px, solid;
+}
+.works{
+    width: 50em;
+    height: 25em;
+    border: 2px, solid;
+    border-radius: var(--border-radius);
+
+    position: relative;
+    display: flex;
+
+    background-color: blueviolet;
+}
+.works:nth-child(odd){
+    justify-content: start;
+}
+.works:nth-child(even){;
+    justify-content: end;
+}
+
+.works::after{
+    content: '';
+    display: block;
+    width: 50%;
+    height: 100%;
+    background-color: white;
+}
+.works:nth-child(odd):after{
+    border-top-left-radius: var(--border-radius);
+    border-bottom-left-radius: var(--border-radius);
+}
+.works:nth-child(even):after{
+    border-top-right-radius: var(--border-radius);
+    border-bottom-right-radius: var(--border-radius);
+}
+.works h1, .works h2{
+    text-align: left;
+}
+.workContent{
+    margin: 2px, solid;
+    width: 30%;
+    margin: 15%;
+    margin-bottom: 0;
+    bottom: 5rem;
+    position: absolute;
+    
+    display: flex;
+    flex-direction: column;
+
+    z-index: 99;
+}
+.workContent h1{
+    font-size: 2rem;
+}
+.workBtn{
+    width: 12rem;
+    height: 3rem;
+    border-radius: 3rem;
+
+    font-size: 0.8rem;
+    font-family: "Open Sans", Verdana, Geneva, Tahoma, sans-serif;
+    color: rgb(255, 255, 255);
+    letter-spacing: 2px;
+    font-weight: 650;
+
+    box-shadow: 0px;
+    border: 0px;
+
+    background: linear-gradient(325deg, rgb(112, 112, 255) 0%, rgb(103, 230, 255) 100%);
+    cursor: pointer;
+}
+footer{
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(110, 3, 191);
+    color: white;
+
+    align-items: center;
+    justify-content: center;
+
+    display: flex;
+    flex-direction: column;
+}
