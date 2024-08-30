@@ -1,4 +1,4 @@
-# paperpillar-clone
+# paperpillar-replica
 This project is trying to replicated Paperpillar web design for learning purposes.
 
 © Paperpillar
