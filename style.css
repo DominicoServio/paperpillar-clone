@@ -4,8 +4,11 @@
     --border-radius: 25px;
     --header-color: linear-gradient(37deg, rgba(114,62,231,1) 0%, rgba(220,125,255,1) 100%);
     --shadow: 3px 3px 10px rgba(221, 226, 239, 0.43);
-    --latestWork-size: 50em;
-    --latestWork-color: rgb(138, 43, 226);;
+    --latestWork-size: 60em;
+    --latestWork-color1: linear-gradient(321deg, rgba(246,152,255,1) 0%, rgba(255,255,255,1) 100%);
+    --latestWork-color2: linear-gradient(173deg, rgba(102,79,210,1) 0%, rgba(150,111,187,1) 100%);
+    --latestWork-color3: linear-gradient(180deg, rgba(80,119,228,1) 0%, rgba(141,181,255,1) 100%);
+    --latestWork-color4: linear-gradient(56deg, rgba(92,42,186,1) 0%, rgba(207,141,255,1) 100%);
 }
 body{
     background-color: rgb(244, 246, 251);
@@ -32,16 +35,6 @@ header{
     mask-size: cover;
     mask-position: bottom;
 }
-/* header::before{
-    content: '';
-    width: 110%;
-    height: 100%;
-    padding: 0;
-    margin: 0;
-    background: linear-gradient(37deg, rgba(114,62,231,1) 0%, rgba(220,125,255,1) 100%);
-    background-repeat: no-repeat;
-    position: absolute;
-} */
 header #icon1{
     width: 1300px;
     position: absolute;
@@ -110,16 +103,37 @@ header h2{
 /* ===== Service Section ===== */
 
 .serviceList{
+    width: 60vw;
+    height: 70vh;
     display: grid;
     grid-template-columns: repeat(3, auto);
+    grid-gap: 50px;
 }
-#servicesIcon{
-    width: 5rem;
-    height: 5rem;
-
-    border: 2px, solid;
+.serviceList > div{
+    /* border: 2px, solid; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
+.serviceIcon{
+    --iconSize: 75px;
+    width: var(--iconSize);
+    height: var(--iconSize);
+    border-radius: 100%;
+    margin: 1rem;
 
+    background-color: blueviolet;
+}
+.serviceList h1{
+    font-size: 1.2rem;
+    font-family: Roboto, Verdana, Geneva, Tahoma, sans-serif;
+    margin-bottom: 0.5rem;
+}
+.serviceList h2{
+    font-size: 1rem;
+    font-family: Serif, 'Times New Roman', Times;
+    color: rgb(113, 113, 113);
+}
 /* ===== Client Section ===== */
 
 .clientList{
@@ -155,7 +169,7 @@ header h2{
     justify-content: center;
     align-items: center;
 }
-.works, #work1, #work2, #work3, #work4{
+.works, .workImage{
     width: var(--latestWork-size);
     height: calc(var(--latestWork-size)/2);
     position: absolute;
@@ -165,24 +179,33 @@ header h2{
 .works{
     margin-bottom: 5em;
     border-radius: var(--border-radius);
-
+    box-shadow: var(--shadow);
     position: relative;
     display: flex;
-
-    background-color: var(--latestWork-color);
-    box-shadow: var(--shadow);
 }
-#work1{
+#workImage1{
     background-image: url(./latestWork/dongengin.png);
 }
-#work2{
+#workBg1{
+    background: var(--latestWork-color1);
+}
+#workImage2{
     background-image: url(./latestWork/swypebite.png);
 }
-#work3{
+#workBg2{
+    background: var(--latestWork-color2);
+}
+#workImage3{
     background-image: url(./latestWork/crisp.png);
 }
-#work4{
+#workBg3{
+    background: var(--latestWork-color3);
+}
+#workImage4{
     background-image: url(./latestWork/hoopsai.png);
+}
+#workBg4{
+    background: var(--latestWork-color4);
 }
 
 .works:nth-child(odd){
@@ -255,7 +278,7 @@ header h2{
 footer{
     width: 100vw;
     height: 100vh;
-    background-color: rgb(110, 3, 191);
+    background: linear-gradient(125deg, rgba(199,87,255,1) 0%, rgba(72,8,156,1) 100%);
     color: white;
 
     align-items: center;
@@ -263,4 +286,8 @@ footer{
 
     display: flex;
     flex-direction: column;
+}
+footer #contactBtn{
+    background-color: rgb(255, 76, 94);
+    color: white;
 }
