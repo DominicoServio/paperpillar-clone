@@ -7,11 +7,14 @@
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="container">
         <header class="header">
+            <!-- <img src="icon1.svg" alt="Paperpillar icon 1" class="headerIcon" id="icon1">
+            <img src="icon2.svg" alt="Paperpillar icon 2" class="headerIcon" id="icon2">
+            <img src="icon3.svg" alt="Paperpillar icon 3" class="headerIcon" id="icon3"> -->
             <h1 id="title">We Are Paperpillar</h1>
             <h2 id="subtitle">We are a skilled ensemble of designers and developers from Yogyakarta, Indonesia</h2>
             <br>
@@ -22,12 +25,36 @@
             <section class="services">
                 <h1>Our Services</h1>
                 <section class="serviceList">
-                    <div id="servicesIcon"></div>
-                    <div id="servicesIcon"></div>
-                    <div id="servicesIcon"></div>
-                    <div id="servicesIcon"></div>
-                    <div id="servicesIcon"></div>
-                    <div id="servicesIcon"></div>
+                    <div>
+                        <div class="serviceIcon" id="serviceIcon1"></div>
+                        <h1 class="serviceText">UI/UX</h1>
+                        <h2 class="serviceSubText">Landing Pages, User Flow, Wireframing, Prototyping, Mobile App Design, Web App</h2>
+                    </div>
+                    <div>
+                        <div class="serviceIcon" id="serviceIcon2"></div>
+                        <h1 class="serviceText">Icon/Illustration</h1>
+                        <h2 class="serviceSubText">Character Design, Icon Set, Illustration Guide, Illustration Set</h2>
+                    </div>
+                    <div>
+                        <div class="serviceIcon" id="serviceIcon3"></div>
+                        <h1 class="serviceText">Branding</h1>
+                        <h2 class="serviceSubText">Visual Identity, Stationary Kit, Marketing Materials</h2>
+                    </div>
+                    <div>
+                        <div class="serviceIcon" id="serviceIcon4"></div>
+                        <h1 class="serviceText">Development</h1>
+                        <h2 class="serviceSubText">HTML/CSS, JavaScript Animation, WordPress, Responsive Website</h2>
+                    </div>
+                    <div>
+                        <div class="serviceIcon" id="serviceIcon5"></div>
+                        <h1 class="serviceText">Motion</h1>
+                        <h2 class="serviceSubText">2D Animation, UI Motion</h2>
+                    </div>
+                    <div>
+                        <div class="serviceIcon" id="serviceIcon6"></div>
+                        <h1 class="serviceText">Photography</h1>
+                        <h2 class="serviceSubText">Travel Photography, Product Photography</h2>
+                    </div>
                 </section>
             </section>
             <section class="clients">
@@ -58,8 +85,8 @@
             </section>
             <section class="latestWorks">
                 <h1>Our Latest Works</h1>
-                <div class="works">
-                    <div id="work1"></div>
+                <div class="works" id="workBg1">
+                    <div class="workImage" id="workImage1"></div>
                     <!-- <img src="./latestWork/dongengin.png"> -->
                     <div class="workContent">
                         <h1 id="workTitle1">Lorem ipsum.</h1>
@@ -68,8 +95,8 @@
                         <button class="workBtn" id="workBtn_1">View case study</button>
                     </div>
                 </div>
-                <div class="works">
-                    <div id="work2"></div>
+                <div class="works" id="workBg2">
+                    <div class="workImage" id="workImage2"></div>
                     <!-- <img src="./latestWork/swypebite.png"> -->
                     <div class="workContent">
                         <h1 id="workTitle2">Lorem ipsum.</h1>
@@ -78,8 +105,8 @@
                         <button class="workBtn" id="workBtn_2">View case study</button>
                     </div>
                 </div>
-                <div class="works">
-                    <div id="work3"></div>
+                <div class="works" id="workBg3">
+                    <div class="workImage" id="workImage3"></div>
                     <!-- <img src="./latestWork/crisp.png"> -->
                     <div class="workContent">
                         <h1 id="workTitle3">Lorem ipsum.</h1>
@@ -88,8 +115,8 @@
                         <button class="workBtn" id="workBtn_3">View case study</button>
                     </div>
                 </div>
-                <div class="works">
-                    <div id="work4"></div>
+                <div class="works" id="workBg4">
+                    <div class="workImage" id="workImage4"></div>
                     <!-- <img src="./latestWork/hoopsai.png"> -->
                     <div class="workContent">
                         <h1 id="workTitle4">Lorem ipsum.</h1>
@@ -103,7 +130,7 @@
         </section>
         <footer>
             <h1>Got any ideas to work on?</h1>
-            <button>Let's talk!</button>
+            <button id="contactBtn">LET'S TALK!</button>
             <div id="contactIcon1"></div>
             <div id="contactIcon2"></div>
             <div id="contactIcon3"></div>
