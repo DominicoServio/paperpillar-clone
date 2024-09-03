@@ -3,13 +3,18 @@
     margin: 0;
     --border-radius: 25px;
     --header-color: linear-gradient(37deg, rgba(114,62,231,1) 0%, rgba(220,125,255,1) 100%);
+    --shadow: 3px 3px 10px rgba(221, 226, 239, 0.43);
+    --latestWork-size: 50em;
+    --latestWork-color: rgb(138, 43, 226);;
 }
 body{
-    background-color: rgb(240, 240, 240);
+    background-color: rgb(244, 246, 251);
 }
 .container{
     width: 100vw;
 }
+/* ===== Header ===== */
+
 header{
     width: 100%;
     height: 90vh;
@@ -74,6 +79,8 @@ header h2{
     background-color: rgb(255, 255, 255);
     cursor: pointer;
 }
+/* ===== Body ===== */
+
 .content{
     width: 100vw;
     
@@ -100,6 +107,8 @@ header h2{
     letter-spacing: 0.1rem;
 }
 
+/* ===== Service Section ===== */
+
 .serviceList{
     display: grid;
     grid-template-columns: repeat(3, auto);
@@ -110,6 +119,9 @@ header h2{
 
     border: 2px, solid;
 }
+
+/* ===== Client Section ===== */
+
 .clientList{
     display: flex;
     justify-content: center;
@@ -117,34 +129,75 @@ header h2{
 }
 .clientList #clientsIcon{
     width: 10rem;
-    height: 5rem;
+    height: 6.5rem;
+    --margin-clients: 20px;
+    margin: calc(var(--margin-clients)/2);
+    margin-top: var(--margin-clients);
+    margin-bottom: var(--margin-clients);
+    border-radius: 15px;
 
-    border: 2px, solid;
+    background-color: white;
+    box-shadow: var(--shadow);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.clientList img{
+    width: 70%;
+}
+/* ===== Latest Works Section ===== */
+
+.latestWorks{
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.works, #work1, #work2, #work3, #work4{
+    width: var(--latestWork-size);
+    height: calc(var(--latestWork-size)/2);
+    position: absolute;
+    background-size: cover;
+    z-index: 99;
 }
 .works{
-    width: 50em;
-    height: 25em;
-    border: 2px, solid;
+    margin-bottom: 5em;
     border-radius: var(--border-radius);
 
     position: relative;
     display: flex;
 
-    background-color: blueviolet;
+    background-color: var(--latestWork-color);
+    box-shadow: var(--shadow);
 }
+#work1{
+    background-image: url(./latestWork/dongengin.png);
+}
+#work2{
+    background-image: url(./latestWork/swypebite.png);
+}
+#work3{
+    background-image: url(./latestWork/crisp.png);
+}
+#work4{
+    background-image: url(./latestWork/hoopsai.png);
+}
+
 .works:nth-child(odd){
     justify-content: start;
 }
 .works:nth-child(even){;
     justify-content: end;
 }
-
 .works::after{
     content: '';
     display: block;
     width: 50%;
     height: 100%;
     background-color: white;
+    z-index: 1;
 }
 .works:nth-child(odd):after{
     border-top-left-radius: var(--border-radius);
@@ -173,7 +226,7 @@ header h2{
 .workContent h1{
     font-size: 2rem;
 }
-.workBtn{
+.workBtn, #otherWorkBtn{
     width: 12rem;
     height: 3rem;
     border-radius: 3rem;
@@ -190,6 +243,15 @@ header h2{
     background: linear-gradient(325deg, rgb(112, 112, 255) 0%, rgb(103, 230, 255) 100%);
     cursor: pointer;
 }
+#otherWorkBtn{
+    background: rgba(255, 255, 255, 0);
+    --otherWorkBtn-color: rgb(255, 63, 82);
+    color: var(--otherWorkBtn-color);
+    border: 1px, solid, var(--otherWorkBtn-color);
+}
+
+/* ===== Footer ===== */
+
 footer{
     width: 100vw;
     height: 100vh;
