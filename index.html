@@ -12,16 +12,14 @@
 <body>
     <div class="container">
         <header class="header">
-            <!-- <img src="icon1.svg" alt="Paperpillar icon 1" class="headerIcon" id="icon1">
-            <img src="icon2.svg" alt="Paperpillar icon 2" class="headerIcon" id="icon2">
-            <img src="icon3.svg" alt="Paperpillar icon 3" class="headerIcon" id="icon3"> -->
             <h1 id="title">We Are Paperpillar</h1>
-            <h2 id="subtitle">We are a skilled ensemble of designers and developers from Yogyakarta, Indonesia</h2>
-            <br>
-            <br>
-            <button id="contactBtn">LET'S TALK!</button>
+            <h2 id="subtitle">We are a skilled ensemble of designers and developers from Yogyakarta, Indonesia</h2>   
         </header>
-        <section class="content">
+        <div class="buttonHolder">
+            <button class="contactBtn" id="fixedContactBtn"></button>
+            <button class="contactBtn" id="headerContactBtn">LET'S TALK!</button>
+        </div>
+        <section class="content">           
             <section class="services">
                 <h1>Our Services</h1>
                 <section class="serviceList">
@@ -85,19 +83,17 @@
             </section>
             <section class="latestWorks">
                 <h1>Our Latest Works</h1>
-                <div class="works" id="workBg1">
+                <section class="works" id="workBg1">
                     <div class="workImage" id="workImage1"></div>
-                    <!-- <img src="./latestWork/dongengin.png"> -->
                     <div class="workContent">
                         <h1 id="workTitle1">Lorem ipsum.</h1>
                         <h2 id="workDescription1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus, impedit?</h2>
                         <br>
                         <button class="workBtn" id="workBtn_1">View case study</button>
                     </div>
-                </div>
+                </section>
                 <div class="works" id="workBg2">
                     <div class="workImage" id="workImage2"></div>
-                    <!-- <img src="./latestWork/swypebite.png"> -->
                     <div class="workContent">
                         <h1 id="workTitle2">Lorem ipsum.</h1>
                         <h2 id="workDescription2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus, impedit?</h2>
@@ -117,7 +113,6 @@
                 </div>
                 <div class="works" id="workBg4">
                     <div class="workImage" id="workImage4"></div>
-                    <!-- <img src="./latestWork/hoopsai.png"> -->
                     <div class="workContent">
                         <h1 id="workTitle4">Lorem ipsum.</h1>
                         <h2 id="workDescription4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus, impedit?</h2>
@@ -129,12 +124,15 @@
             </section>
         </section>
         <footer>
-            <h1>Got any ideas to work on?</h1>
-            <button id="contactBtn">LET'S TALK!</button>
-            <div id="contactIcon1"></div>
-            <div id="contactIcon2"></div>
-            <div id="contactIcon3"></div>
+            <section class="footerContent">
+                <h1>Got any ideas to work on?</h1>
+                <button class="contactBtn" id="footerContactBtn">LET'S TALK!</button>
+                <div id="contactIcon1"></div>
+                <div id="contactIcon2"></div>
+                <div id="contactIcon3"></div>
+            </section>
         </footer>
     </div>
+    <script src="index.js"></script>
 </body>
 </html>
