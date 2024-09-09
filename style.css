@@ -1,6 +1,9 @@
 *{
     padding: 0;
     margin: 0;
+
+/* ====== control panel ======= */
+
     --border-radius: 25px;
     --header-color: linear-gradient(37deg, rgba(114,62,231,1) 0%, rgba(220,125,255,1) 100%);
     --shadow: 3px 3px 10px rgba(221, 226, 239, 0.43);
@@ -9,13 +12,10 @@
     --latestWork-color2: linear-gradient(173deg, rgba(102,79,210,1) 0%, rgba(150,111,187,1) 100%);
     --latestWork-color3: linear-gradient(180deg, rgba(80,119,228,1) 0%, rgba(141,181,255,1) 100%);
     --latestWork-color4: linear-gradient(56deg, rgba(92,42,186,1) 0%, rgba(207,141,255,1) 100%);
+    --contactBtn-size: 3rem;
+    --transitionTime: 0.3s;
 }
-body{
-    background-color: rgb(244, 246, 251);
-}
-.container{
-    width: 100vw;
-}
+
 /* ===== Header ===== */
 
 header{
@@ -28,25 +28,23 @@ header{
 
     display: flex;
     justify-content: center;
-    align-items: center;
-    
+    align-items: center;    
     flex-direction: column;
+
     mask-image: url(icon1-bg.svg);
     mask-size: cover;
-    mask-position: bottom;
+    mask-position: bottom;    
 }
 header #icon1{
     width: 1300px;
-    position: absolute;
 }
 header h1{
     color: white;
     font-family: "DM Serif Text", Serif, 'Times New Roman', Times;
     font-style: normal;
     font-weight: 550;
-    font-size: 4.5em;
-
-    margin: 1rem;
+    font-size: 6.5em;
+    margin: 0.5rem;
 }
 header h2{
     color: white;
@@ -55,28 +53,73 @@ header h2{
     font-weight: 400;
     text-align: center;
 }
-#contactBtn{
-    width: 12rem;
-    height: 3rem;
+
+/* ==== contact Button ==== */
+
+.buttonHolder{
+    height: 90vh;
+    top: 0;
+    left: calc(50% - var(--contactBtn-size) * 2);
+    border: 2px solid;
+
+    position: absolute;
+    display: flex;
+    align-items: end;
+}
+
+.contactBtn{
+    width: calc(var(--contactBtn-size) * 4);
+    height: var(--contactBtn-size);
     border-radius: 3rem;
-
-    font-size: 0.8rem;
-    font-family: "Open Sans", Verdana, Geneva, Tahoma, sans-serif;
-    color: rgb(110, 3, 191);
-    letter-spacing: 2px;
-    font-weight: 650;
-
     box-shadow: 0px;
     border: 0px;
 
+    font-size: 0.7rem;
+    font-family: "Open Sans", Verdana, Geneva, Tahoma, sans-serif;
+    letter-spacing: 2px;
+    font-weight: 650;
+    color: rgb(110, 3, 191);
     background-color: rgb(255, 255, 255);
+
     cursor: pointer;
 }
+#headerContactBtn{
+    margin-bottom: 90%;
+    position: static;
+    opacity: 1;
+
+    transition: opacity var(--transitionTime);
+}
+#fixedContactBtn{
+    width: calc(var(--contactBtn-size) * 1.5);
+    height: calc(var(--contactBtn-size) * 1.5);
+    bottom: 5%;
+    right: 5%;
+    background-color:rgb(255, 76, 94);
+    color: white;
+    position: fixed;
+    opacity: 0;
+
+    transition: opacity var(--transitionTime);
+}
+
+.buttonHolder[data-scroll-position="1"] #headerContactBtn {
+    opacity: 0;
+
+    transition: opacity var(--transitionTime);
+  }
+.buttonHolder[data-scroll-position="1"] #fixedContactBtn {
+    opacity: 1;
+
+    transition: opacity var(--transitionTime);
+  }
+
 /* ===== Body ===== */
 
-.content{
-    width: 100vw;
-    
+body{
+    background-color: rgb(244, 246, 251);
+}
+.content{  
     justify-content: center;
     align-items: center;
 
@@ -87,7 +130,7 @@ header h2{
     font-size: 3rem;
     font-family: "DM Serif Text", Serif, 'Times New Roman', Times;
     font-style: normal;
-    font-weight: 500;
+    font-weight: 550;
     text-align: center;
     letter-spacing: 0.1rem;
 }
@@ -98,6 +141,12 @@ header h2{
     font-weight: 500;
     text-align: center;
     letter-spacing: 0.1rem;
+}
+.content > section{
+    margin-top: 8em;
+}
+.content section section{
+    margin-top: 4em;
 }
 
 /* ===== Service Section ===== */
@@ -110,7 +159,6 @@ header h2{
     grid-gap: 50px;
 }
 .serviceList > div{
-    /* border: 2px, solid; */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -163,7 +211,6 @@ header h2{
 /* ===== Latest Works Section ===== */
 
 .latestWorks{
-    width: 100vw;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -276,18 +323,35 @@ header h2{
 /* ===== Footer ===== */
 
 footer{
-    width: 100vw;
-    height: 100vh;
-    background: linear-gradient(125deg, rgba(199,87,255,1) 0%, rgba(72,8,156,1) 100%);
+    height: 130vh;
+    background-image: url(footer-bg.svg), linear-gradient(125deg, rgb(224, 87, 255) 0%, rgb(56, 6, 120) 100%);
+    background-repeat: no-repeat;
+    background-size: cover;
     color: white;
-
-    align-items: center;
-    justify-content: center;
 
     display: flex;
+    align-items: center;
+    justify-content: end;
     flex-direction: column;
+
+    mask-image: url(footer.svg);
+    mask-size: cover;
+    mask-position: bottom;
 }
-footer #contactBtn{
+.footerContent{
+    width: 70vw;
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    bottom: 1em;
+}
+footer h1{
+    font-size: 3.5rem;
+}
+#footerContactBtn{
     background-color: rgb(255, 76, 94);
     color: white;
+    margin: 3em;
 }
